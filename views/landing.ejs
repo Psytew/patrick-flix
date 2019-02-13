@@ -1,0 +1,15 @@
+<% include partials/header %>
+
+<% include partials/navbar %>
+
+<% films.forEach(function(film){ %>
+
+	<div>
+		<h2><%= film.name %></h2>
+		<a href="/films/<%= film._id %>"><img src="<%=film.img%>"></a>
+		<p><%= film.description %></p>
+	</div>
+
+<% }) %>
+
+<% include partials/footer %>

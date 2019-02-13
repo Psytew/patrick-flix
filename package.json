@@ -1,0 +1,24 @@
+{
+  "name": "patrick-flix",
+  "version": "1.0.0",
+  "description": "A netflix mockup for my own fshort films",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Psytew/patrick-flix.git"
+  },
+  "author": "Patrick Westervelt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Psytew/patrick-flix/issues"
+  },
+  "homepage": "https://github.com/Psytew/patrick-flix#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.11"
+  }
+}
