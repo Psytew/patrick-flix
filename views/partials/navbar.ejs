@@ -1,7 +1,12 @@
 <div id="navbar">
 	<h1>PatrickFlix</h1>
+
 	<p>A Netflix mockup populated exclusively by films I've made</p>
-	<p>Sign Up</p>
-	<p>Login</p>
-	<p>Log Out</p>
+	<% if (!currentUser){ %>
+		<p><a href="/register">Sign Up</a></p>
+		<p><a href="/login">Login</a></p>
+	<% } else { %>
+		<p>Signed in as <%=currentUser.username%></p>
+		<p><a href="/logout">Log Out</a></p>
+	<% } %>
 </div>
