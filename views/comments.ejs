@@ -3,13 +3,12 @@
 
 <form action="/films/<%=film._id%>/comments" method="POST">
 	<input type="text" name="comment[text]" placeholder="comment">
-	<input type="text" name="comment[author]" placeholder="username">
 	<button>Submit</button>
 </form>
 
 <% film.comments.forEach(function(comment){ %>
 	
-	<p><strong><%= comment.author %></strong> - <%= comment.text %>
+	<p><strong><%= comment.author.username %></strong> - <%= comment.text %>
 
 <% }) %>
 

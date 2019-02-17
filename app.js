@@ -8,6 +8,9 @@ var express = require("express"),
 	LocalStrategy = require("passport-local"),
 	User = require("./models/user")
 
+var filmRoutes = require("./routes/films"),
+	authRoutes = require("./routes/auth")
+
 //Link to my database
 mongoose.connect("mongodb://Patrick:Password@cluster0-shard-00-00-l1try.mongodb.net:27017,cluster0-shard-00-01-l1try.mongodb.net:27017,cluster0-shard-00-02-l1try.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true")
 
@@ -40,100 +43,8 @@ app.use(function(req,res,next){
 	next()
 })
 
-//Loads index page, passes in film data
-app.get("/",function(req,res){
-	Film.find({},function(err,allFilms){
-		if(err){
-			console.log(err)
-		} else {
-			res.render("landing",{films:allFilms})
-		}
-	})
-})
-
-//Films Page
-app.get("/films/:id",function(req,res){
-	Film.findById(req.params.id,function(err,foundFilm){
-		if(err){
-			console.log(err)
-		} else {
-			res.render("show",{film:foundFilm})
-		}
-	})
-})
-
-//Comments Page
-app.get("/films/:id/comments",function(req,res){
-	Film.findById(req.params.id).populate("comments").exec(function(err,foundFilm){
-		if(err){
-			console.log(err)
-		} else {
-			res.render("comments",{film:foundFilm})
-		}
-	})
-})
-
-app.post("/films/:id/comments",isLoggedIn,function(req,res){
-	Film.findById(req.params.id,function(err,film){
-		if(err){
-			console.log(err)
-			res.redirect("/films")
-		} else {
-			// console.log(req.body.comment)
-			Comment.create(req.body.comment, function(err,comment){
-				if(err){
-					console.log(err)
-				} else {
-					film.comments.push(comment);
-					film.save()
-					res.redirect("/films/" + film._id + "/comments")
-				}
-			})
-		}
-	})
-})
-
-//AUTHORIZATION ROUTES
-
-app.get("/register",function(req,res){
-	res.render("register")
-})
-
-app.post("/register",function(req,res){
-	var newUser = new User({username: req.body.username})
-	User.register(newUser, req.body.password,function(err,user){
-		if(err){
-			console.log(err)
-			return res.render("register")
-		}
-		passport.authenticate("local")(req,res,function(){
-			res.redirect("/")
-		})
-	})
-})
-
-app.get("/login",function(req,res){
-	res.render("login")
-})
-
-app.post("/login",passport.authenticate("local",
-	{successRedirect:"/",
-	failureRedirect:"/login"
-	}),function(req,res){
-})
-
-app.get("/logout",function(req,res){
-	req.logout()
-	res.redirect("/")
-})
-
-//MIDDLEWARE
-function isLoggedIn(req,res,next){
-	if(req.isAuthenticated()){
-		return next();
-	}
-	res.redirect("/login")
-}
+app.use(authRoutes)
+app.use(filmRoutes)
 
 //Gets the server running
 app.listen(port, hostname, function(){
