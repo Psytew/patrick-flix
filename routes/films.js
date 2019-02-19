@@ -1,5 +1,5 @@
 var express = require("express")
-var router = express.Router();
+var router = express.Router({mergeParams: true});
 var Film = require("../models/film")
 var Comment = require("../models/comment")
 
@@ -59,12 +59,61 @@ router.post("/films/:id/comments",isLoggedIn,function(req,res){
 	})
 })
 
+router.get("/films/:id/comments/:comment_id/edit",checkCommentOwnership,function(req,res){
+	Comment.findById(req.params.comment_id,function(err,foundComment){
+		if (err){
+			res.redirect("back")
+		} else {
+			res.render('editComment',{film_id:req.params.id,comment:foundComment})
+		}
+	})
+})
+
+router.put("/films/:id/comments/:comment_id/",checkCommentOwnership,function(req,res){
+	Comment.findByIdAndUpdate(req.params.comment_id,req.body.comment,function(err,updatedComment){
+		if (err){
+			res.redirect("back")
+		} else {
+			res.redirect("/films/" + req.params.id + "/comments")
+		}
+	})
+})
+
+router.delete("/films/:id/comments/:comment_id/",checkCommentOwnership,function(req,res){
+	Comment.findByIdAndRemove(req.params.comment_id,function(err){
+		if (err){
+			res.redirect("back")
+		} else {
+			res.redirect("back")
+		}
+	})
+})
+
 //MIDDLEWARE
 function isLoggedIn(req,res,next){
 	if(req.isAuthenticated()){
 		return next();
 	}
 	res.redirect("/login")
+}
+
+function checkCommentOwnership(req,res,next){
+	if(req.isAuthenticated()){
+		Comment.findById(req.params.comment_id,function(err,foundComment){
+			if(err){
+				res.redirect("back")
+			} else {
+				console.log("so close")
+				if (foundComment.author.id.equals(req.user._id)){
+					next()
+				} else {
+					res.redirect("back")
+				}
+			}
+		})
+	} else {
+		res.redirect("back")
+	}
 }
 
 module.exports = router

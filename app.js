@@ -1,5 +1,6 @@
 var express = require("express"),
 	app = express(),
+	methodOverride = require("method-override")
 	mongoose = require("mongoose"),
 	bodyParser = require("body-parser"),
 	Film = require("./models/film"),
@@ -16,6 +17,8 @@ mongoose.connect("mongodb://Patrick:Password@cluster0-shard-00-00-l1try.mongodb.
 
 //Allows us to parse form submissions
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(methodOverride("_method"))
 
 //Sets up localhost settings
 app.use(express.static(__dirname + '/public'));
