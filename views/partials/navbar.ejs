@@ -1,12 +1,16 @@
-<div id="navbar">
-	<h1>PatrickFlix</h1>
+<link rel="stylesheet" href="../styles/navbar.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-	<p>A Netflix mockup populated exclusively by films I've made</p>
+<div id="navbar">
+	<ul>
+		<li id="logo"><img id="logoimage" src="../patflix.png"></li>
+		<li id="blurb">A Netflix mockup populated exclusively by films I've made</li>
 	<% if (!currentUser){ %>
-		<p><a href="/register">Sign Up</a></p>
-		<p><a href="/login">Login</a></p>
+		<li id="register"><a href="/register">Sign Up</a></li>
+		<li id="login"><a href="/login">Login</a></li>
 	<% } else { %>
-		<p>Signed in as <%=currentUser.username%></p>
-		<p><a href="/logout">Log Out</a></p>
+		<li id="signedin">Signed in as <%=currentUser.username%></li>
+		<li id="signout"><a href="/logout">Log Out</a></li>
 	<% } %>
+	</ul>
 </div>

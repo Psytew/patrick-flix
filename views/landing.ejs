@@ -2,14 +2,72 @@
 
 <% include partials/navbar %>
 
-<% films.forEach(function(film){ %>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-	<div>
-		<h2><%= film.name %></h2>
-		<a href="/films/<%= film._id %>"><img src="<%=film.img%>"></a>
-		<p><%= film.description %></p>
-	</div>
+<link rel="stylesheet" href="../styles/landing.css">
 
-<% }) %>
+<div class="wrapper">
+
+	<h2 class="selection" id="popular">Popular on Patflix</h2>
+
+	<% films.forEach(function(film){ %>
+		<span class="wrap">
+			<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
+			<p class="previewText"><%=film.name%></p>
+			</span>
+	<% }) %>
+
+</div>
+
+<div class="wrapper">
+
+	<h2 class="selection" id="popular">Sitcom Parodies</h2>
+
+	<% films.forEach(function(film){ %>
+
+		<% if (film.genre == "sitcom"){ %>
+			<span class="wrap">
+				<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
+				<p class="previewText"><%=film.name%></p>
+			</span>
+		<% } %>
+
+	<% }) %>
+
+</div>
+
+<div class="wrapper">
+
+	<h2 class="selection" id="popular">Noir</h2>
+
+	<% films.forEach(function(film){ %>
+
+		<% if (film.genre == "noir"){ %>
+			<span class="wrap">
+				<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
+				<p class="previewText"><%=film.name%></p>
+			</span>
+		<% } %>
+
+	<% }) %>
+
+</div>
+
+<div class="wrapper">
+
+	<h2 class="selection" id="popular">Animated</h2>
+
+	<% films.forEach(function(film){ %>
+
+		<% if (film.genre == "animated"){ %>
+			<span class="wrap">
+				<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
+				<p class="previewText"><%=film.name%></p>
+			</span>
+		<% } %>
+
+	<% }) %>
+
+</div>
 
 <% include partials/footer %>

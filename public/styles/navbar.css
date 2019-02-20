@@ -1,0 +1,74 @@
+body{
+	margin: 0;
+}
+
+h1{
+	margin: 0;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+	display: inline;
+}
+
+li a{
+	text-decoration: none;
+	color: white;
+}
+
+#navbar{
+	font-family:'Roboto', sans-serif;
+	height: 70px;
+	font-size: 1.5vw;
+	background-color: #141414;
+	color: white;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	vertical-align: middle;
+}
+
+#logoimage{
+	position: relative;
+	left: 50px;
+	top: 18px;
+	height: 30px;
+	margin-right: 50px;
+}
+
+#blurb{
+	position: relative;
+	top: 10px;
+	padding-left: 36px;
+	position: relative;
+	text-align: center;
+	font-size: 15px;
+}
+
+#login, #logout, #register, #signedin{
+	font-size: 20px;
+	float: right;
+	margin-top: 22px;
+
+}
+
+#register, #signedin{
+	margin-right: 50px;
+}
+
+#login, #logout{
+	margin-right: 20px;
+
+}
+
+@media only screen and (max-width: 750px) {
+	#blurb{
+		display: none;
+	}
+}
