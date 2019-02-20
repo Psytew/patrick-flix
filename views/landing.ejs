@@ -4,69 +4,94 @@
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+
 <link rel="stylesheet" href="../styles/landing.css">
 
-<div class="wrapper">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-	<h2 class="selection" id="popular">Popular on Patflix</h2>
+<div id="teaser">
 
-	<% films.forEach(function(film){ %>
-		<span class="wrap">
-			<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
-			<p class="previewText"><%=film.name%></p>
-			</span>
-	<% }) %>
+	<img id="teaser-img" src="film_data/moustache-teaser.png">
 
-</div>
+	<h1 id="teaser-title1">Moustaches and</h1>
+	<h1 id="teaser-title2">Murder</h1>
 
-<div class="wrapper">
+	<p id="teaser-info">When a stone cold cop loses his partner, he finds a new one more like him than he ever thought possible</p>
 
-	<h2 class="selection" id="popular">Sitcom Parodies</h2>
-
-	<% films.forEach(function(film){ %>
-
-		<% if (film.genre == "sitcom"){ %>
-			<span class="wrap">
-				<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
-				<p class="previewText"><%=film.name%></p>
-			</span>
-		<% } %>
-
-	<% }) %>
+	<a href="films/5c63535fc54b3967081af60e"><i id="teaser-button" class="fas fa-play"></i></a>
 
 </div>
 
-<div class="wrapper">
+<div id="titles">
 
-	<h2 class="selection" id="popular">Noir</h2>
+	<div class="wrapper">
 
-	<% films.forEach(function(film){ %>
+		<h2 class="selection" id="popular">Popular on Patflix</h2>
 
-		<% if (film.genre == "noir"){ %>
+		<% films.forEach(function(film){ %>
 			<span class="wrap">
-				<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
+				<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>">
 				<p class="previewText"><%=film.name%></p>
+				<i class="fas fa-play"></i></a>
 			</span>
-		<% } %>
+		<% }) %>
 
-	<% }) %>
+	</div>
 
-</div>
+	<div class="wrapper">
 
-<div class="wrapper">
+		<h2 class="selection" id="sitcom">Sitcom Parodies</h2>
 
-	<h2 class="selection" id="popular">Animated</h2>
+		<% films.forEach(function(film){ %>
 
-	<% films.forEach(function(film){ %>
+			<% if (film.genre == "sitcom"){ %>
+				<span class="wrap">
+					<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
+					<p class="previewText"><%=film.name%></p>
+					<i class="fas fa-play"></i>
+				</span>
+			<% } %>
 
-		<% if (film.genre == "animated"){ %>
-			<span class="wrap">
-				<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
-				<p class="previewText"><%=film.name%></p>
-			</span>
-		<% } %>
+		<% }) %>
 
-	<% }) %>
+	</div>
+
+	<div class="wrapper">
+
+		<h2 class="selection" id="noir">Noir</h2>
+
+		<% films.forEach(function(film){ %>
+
+			<% if (film.genre == "noir"){ %>
+				<span class="wrap">
+					<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
+					<p class="previewText"><%=film.name%></p>
+					<i class="fas fa-play"></i>
+				</span>
+			<% } %>
+
+		<% }) %>
+
+	</div>
+
+	<div class="wrapper">
+
+		<h2 class="selection" id="animated">Animated</h2>
+
+		<% films.forEach(function(film){ %>
+
+			<% if (film.genre == "animated"){ %>
+				<span class="wrap">
+					<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>"></a>
+					<p class="previewText"><%=film.name%></p>
+					<i class="fas fa-play"></i>
+				</span>
+			<% } %>
+
+		<% }) %>
+
+	</div>
 
 </div>
 

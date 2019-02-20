@@ -12,20 +12,23 @@ body{
 }
 
 .previewImage{
+	z-index: 1;
 	vertical-align: middle;
 	height: 145px;
 	transition: opacity .2s cubic-bezier(0.55, 0.055, 0.675, 0.19), visibility .2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 	transition: all .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
-.previewImage:hover{
+.wrap:hover .previewImage{
 	height: 190px;
 }
 
-.previewText {
+.wrap .previewText {
 	position: absolute;
-	top: 45px;
 	font-size: 20px;
+	top: 35px;
 	bottom: 0;
 	left: 10px;
 	right: 0;
@@ -33,12 +36,37 @@ body{
 	color: #fff;
 	visibility: hidden;
 	opacity: 0;
-	transition: opacity 2.5s, visibility 2.5s;
+	transition: opacity .2s cubic-bezier(0.55, 0.055, 0.675, 0.19), visibility .2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	transition: all .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 
 .wrap:hover .previewText {
     visibility: visible;
     opacity: 1;
+    top: 45px;
+}
+
+.wrap i {
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	font-size: 40px;
+	top: -10px;
+	bottom: 0;
+	left: 110px;
+	right: 0;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .2s cubic-bezier(0.55, 0.055, 0.675, 0.19), visibility .2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	transition: all .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .wrap:hover i {
+    visibility: visible;
+    opacity: 1;
+    left: 150px;
+    top: -10px;
 }
 
 .wrapper{
@@ -49,7 +77,67 @@ body{
   padding-left:  50px; /* 3 */
 }
 
-.selection{
-	position; relative
-	padding-top: 50px;
+#teaser{
+	position: relative;
+}
+
+#teaser-img{
+	width: 100%;
+	z-index: 4;
+}
+
+#teaser-title1, #teaser-title2{
+	font-family: 'Coiny', cursive;
+	position: absolute;
+	font-size: 3vw;
+}
+
+#teaser-title1{
+	top: 24.5vw;
+	left: 2.2vw;
+}
+
+#teaser-title2{
+	top: 27.5vw;
+	left: 19vw;
+}
+
+#teaser-info{
+	width: 30vw;
+	font-size: 1.5vw;
+	position: absolute;
+	top: 30vw;
+	left: 3vw;
+}
+
+#teaser-button{
+	font-size: 90px;
+	position: absolute;
+	top: 20vw;
+	left: 45vw;
+	z-index: 5;
+	color: white;
+	transition: all 0.3s;
+}
+
+#teaser-button:hover{
+	top: 19vw;
+	left: 44vw;
+	font-size: 120px;
+}
+
+#titles{
+	position: relative;
+	top: -190px;
+	padding-bottom: -190px;
+}
+
+@media only screen and (max-width: 1000px) {
+	#teaser{
+		display: none;
+	}
+
+	#popular{
+		padding-top: 250px;
+	}
 }

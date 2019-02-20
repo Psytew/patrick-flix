@@ -32,12 +32,13 @@ li a{
 	top: 0;
 	width: 100%;
 	vertical-align: middle;
+	z-index: 8;
 }
 
 #logoimage{
 	position: relative;
 	left: 50px;
-	top: 18px;
+	top: 20px;
 	height: 30px;
 	margin-right: 50px;
 }
@@ -67,8 +68,22 @@ li a{
 
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 800px) {
 	#blurb{
 		display: none;
+	}
+
+	#navbar{
+		height: 40px;
+	}
+
+	#logoimage{
+		top: 14px;
+		height: 15px;
+	}
+
+	#login, #logout, #register, #signedin{
+		font-size: 14px;
+		margin-top: 12px;
 	}
 }
