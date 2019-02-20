@@ -1,0 +1,59 @@
+body{
+	background-image: url(../login-register-background-smaller.png);
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+}
+
+form{
+	position: relative;
+	background: #141414;
+	width: 425px;
+	height: 450px;
+	margin: 0 auto;
+	border-radius: 5px;
+	opacity: 0.9;
+}
+
+img{
+	position: relative;
+	left: 25px;
+	top: 10px;
+	height: 57px;
+	margin-right: 50px;
+}
+
+input{
+	width: 300px;
+	height: 40px;
+	border-radius: 3px;
+	background: grey;
+}
+
+#title{
+	text-align: left;
+	padding-left: 60px;
+	padding-bottom: 10px;
+	padding-top: 60px;
+}
+
+#form{
+	text-align: center;
+}
+
+#username{
+	margin-bottom: 20px;
+}
+
+#password{
+	margin-bottom: 40px;
+}
+
+#submit{
+	width: 300px;
+	height: 50px;
+	font-size: 16px;
+	color: white;
+	border-radius: 3px;
+	border: none;
+	background-color: #3166B0;
+}

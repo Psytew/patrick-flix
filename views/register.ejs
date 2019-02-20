@@ -1,13 +1,19 @@
 <% include partials/header %>
 
-<% include partials/navbar %>
+<link rel="stylesheet" href="../styles/register.css">
 
-<h1>Sign up</h1>
+<img id="logoimage" src="../patflix.png" />
 
-<form action="/register" method="post">
-	<input type="text" name="username" placeholder="username">
-	<input type="password" name="password" placeholder="password">
-	<button>Sign Up</button>
+<form id="form" action="/register" method="post">
+
+	<h1 id="title">Sign up</h1>
+
+	<input id="username" type="text" name="username" placeholder="username">
+
+	<input id="password" type="password" name="password" placeholder="password">
+
+	<button id="submit"><strong>Sign Up</strong></button>
+
 </form>
 
 <% include partials/footer %>

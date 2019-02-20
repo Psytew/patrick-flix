@@ -9,8 +9,8 @@
 		<li id="register"><a href="/register">Sign Up</a></li>
 		<li id="login"><a href="/login">Login</a></li>
 	<% } else { %>
-		<li id="signedin">Signed in as <%=currentUser.username%></li>
 		<li id="signout"><a href="/logout">Log Out</a></li>
+		<li id="signedin">Signed in as <%=currentUser.username%></li>
 	<% } %>
 	</ul>
 </div>
