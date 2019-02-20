@@ -1,0 +1,30 @@
+body{
+	background-color: black;
+}
+
+video{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+#page #back{
+	position: absolute;
+	font-size: 4vw;
+	color: white;
+	z-index: 1;
+	top: 30px;
+	left: 30px;
+	opacity: 0;
+	transition: all 1s;
+}
+
+#page:hover #back{
+	visibility: visible;
+	opacity: 1;
+}
