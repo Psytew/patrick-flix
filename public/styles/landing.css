@@ -30,7 +30,7 @@ body{
 	font-size: 20px;
 	top: 35px;
 	bottom: 0;
-	left: 10px;
+	left: 20px;
 	right: 0;
 	background: rgba(29, 106, 154, 0.72);
 	color: #fff;
@@ -51,22 +51,40 @@ body{
 	height: 1px;
 	position: absolute;
 	font-size: 40px;
-	top: -10px;
-	bottom: 0;
-	left: 110px;
-	right: 0;
 	color: #fff;
 	visibility: hidden;
 	opacity: 0;
 	transition: opacity .2s cubic-bezier(0.55, 0.055, 0.675, 0.19), visibility .2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 	transition: all .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
+}
 
-  .wrap:hover i {
+.wrap .playButton {
+	top: -10px;
+	bottom: 0;
+	left: 110px;
+	right: 0;
+}
+
+.wrap .commentsButton{
+	top: 40px;
+	bottom: 0;
+	left: 210px;
+	right: 0;
+}
+
+.wrap:hover i {
     visibility: visible;
     opacity: 1;
+}
+
+.wrap:hover .playButton {
     left: 150px;
     top: -10px;
+}
+
+.wrap:hover .commentsButton{
+	left: 280px;
+	top: 52px;
 }
 
 .wrapper{

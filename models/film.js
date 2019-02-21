@@ -7,6 +7,7 @@ var filmSchema = new mongoose.Schema({
 	img: String,
 	video: String,
 	genre: String,
+	popular: Boolean,
 	comments: [
 		{
 			type: mongoose.Schema.Types.ObjectId,

@@ -30,11 +30,18 @@
 		<h2 class="selection" id="popular">Popular on Patflix</h2>
 
 		<% films.forEach(function(film){ %>
-			<span class="wrap">
-				<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>">
-				<p class="previewText"><%=film.name%></p>
-				<i class="fas fa-play"></i></a>
-			</span>
+
+			<% if (film.popular){ %>
+				
+				<span class="wrap">
+					<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>">
+					<p class="previewText"><%=film.name%></p>
+					<i class="fas fa-play playButton"></i></a>
+					<a href="/films/<%= film._id %>/comments"><i class="fas fa-comments commentsButton"></i></a>
+				</span>
+
+			<% } %>
+
 		<% }) %>
 
 	</div>
@@ -49,7 +56,8 @@
 				<span class="wrap">
 					<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>">
 					<p class="previewText"><%=film.name%></p>
-					<i class="fas fa-play"></i></a>
+					<i class="fas fa-play playButton"></i></a>
+					<a href="/films/<%= film._id %>/comments"><i class="fas fa-comments commentsButton"></i></a>
 				</span>
 			<% } %>
 
@@ -67,7 +75,8 @@
 				<span class="wrap">
 					<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>">
 					<p class="previewText"><%=film.name%></p>
-					<i class="fas fa-play"></i></a>
+					<i class="fas fa-play playButton"></i></a>
+					<a href="/films/<%= film._id %>/comments"><i class="fas fa-comments commentsButton"></i></a>
 				</span>
 			<% } %>
 
@@ -85,7 +94,8 @@
 				<span class="wrap">
 					<a href="/films/<%= film._id %>"><img class="previewImage" src="<%=film.img%>">
 					<p class="previewText"><%=film.name%></p>
-					<i class="fas fa-play"></i></a>
+					<i class="fas fa-play playButton"></i></a>
+					<a href="/films/<%= film._id %>/comments"><i class="fas fa-comments commentsButton"></i></a>
 				</span>
 			<% } %>
 
