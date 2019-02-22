@@ -8,7 +8,7 @@ form{
 	position: relative;
 	background: #141414;
 	width: 425px;
-	height: 450px;
+	height: 400px;
 	margin: 0 auto;
 	border-radius: 5px;
 	opacity: 0.9;
@@ -56,4 +56,20 @@ input{
 	border-radius: 3px;
 	border: none;
 	background-color: #3166B0;
+}
+
+@media only screen and (max-width: 620px) {
+	body{
+		background-image: none;
+		background-color: #141414;
+	}
+
+	#title{
+		padding-left: 25px;
+		padding-top: 30px;
+	}
+
+	form{
+		width: 350px;
+	}
 }

@@ -5,6 +5,10 @@ body{
 	font-size: 12px;
 }
 
+a{
+
+}
+
 .wrap{
 	position: relative;
     height: 145px;
@@ -38,12 +42,14 @@ body{
 	opacity: 0;
 	transition: opacity .2s cubic-bezier(0.55, 0.055, 0.675, 0.19), visibility .2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 	transition: all .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	white-space: nowrap;
   }
 
 .wrap:hover .previewText {
     visibility: visible;
     opacity: 1;
     top: 45px;
+    white-space: nowrap;
 }
 
 .wrap i {
@@ -93,6 +99,11 @@ body{
 
   padding-right: 50px; /* 3 */
   padding-left:  50px; /* 3 */
+}
+
+.titleOfFilm{
+	position: absolute;
+	display: inline;
 }
 
 #teaser{
@@ -150,6 +161,36 @@ body{
 	padding-bottom: -190px;
 }
 
+@media only screen and (max-width: 1200px) {
+	#titles{
+		margin: 0 auto;
+		text-align: center;
+		width: 620px;
+	}
+	.wrapper{
+		padding-left: 0;
+		padding-right: 0;
+		margin-right: 0; /* 1 */
+		margin-left: 0; /* 1 */
+	}
+
+	.wrap .previewText {
+		position: absolute;
+		text-align: left;
+		white-space: nowrap;
+	}
+
+	.wrap:hover .previewText {
+		position: absolute;
+		text-align: left;
+		white-space: nowrap;
+	}
+
+	a p{
+		height: 0;
+	}
+}
+
 @media only screen and (max-width: 1000px) {
 	#teaser{
 		display: none;
@@ -157,5 +198,11 @@ body{
 
 	#popular{
 		padding-top: 250px;
+	}
+}
+
+@media only screen and (max-width: 619px) {
+	#titles{
+		width: 350px;
 	}
 }

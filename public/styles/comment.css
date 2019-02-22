@@ -14,9 +14,6 @@ button{
 	border-radius: 3px;
 }
 
-.form-button{
-
-}
 
 #content{
 	padding: 10px;
@@ -64,4 +61,14 @@ button{
 
 #comment{
 	font-weight: 200;
+}
+
+@media only screen and (max-width: 620px) {
+	body{
+		background-color: #3166B0;
+	}
+
+	#content{
+		width: 350px;
+	}
 }

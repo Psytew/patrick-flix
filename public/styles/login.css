@@ -57,3 +57,14 @@ input{
 	border: none;
 	background-color: #3166B0;
 }
+
+@media only screen and (max-width: 620px) {
+	body{
+		background-image: none;
+		background-color: #141414;
+	}
+
+	#title{
+		padding-top: 30px;
+	}
+}
