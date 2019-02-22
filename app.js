@@ -21,9 +21,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"))
 
 //Sets up localhost settings
-app.use(express.static(__dirname + '/public'));
-const hostname = '127.0.0.1';
-const port = 3000;
+// app.use(express.static(__dirname + '/public'));
+// const hostname = '127.0.0.1';
+// const port = 3000;
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -50,7 +50,7 @@ app.use(authRoutes)
 app.use(filmRoutes)
 
 //Gets the server running
-app.listen(port, hostname, function(){
+app.listen(process.env.PORT || 3000, function(){
 	console.log("Running");
 })
 
