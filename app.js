@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"))
 
 //Sets up localhost settings
-// app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 // const hostname = '127.0.0.1';
 // const port = 3000;
 
